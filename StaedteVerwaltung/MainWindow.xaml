@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StaedteVerwaltung"
         mc:Ignorable="d"
-        Title="Data Templates" Height="450" Width="800">
+        Title="Data Templates sind toll" Height="450" Width="800">
     <StackPanel>
         <ListBox Name="Staedte">
             <ListBox.ItemTemplate>
