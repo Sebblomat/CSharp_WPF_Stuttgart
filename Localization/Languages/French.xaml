@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Localization"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="Header">Entrez votre texte, s'il vous plaît:</system:String>
+    <system:String x:Key="Cancel">Abandonner</system:String>
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Times New Roman"/>
+        <Setter Property="Foreground" Value="DarkBlue"/>
+    </Style>
+</ResourceDictionary>

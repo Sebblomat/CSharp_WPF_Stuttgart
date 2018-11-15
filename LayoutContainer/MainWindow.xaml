@@ -1,0 +1,63 @@
+﻿<Window x:Class="LayoutContainer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayoutContainer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <!--Attached Properties-->
+        <TextBlock DockPanel.Dock="Top" Background="CornflowerBlue" FontSize="25" 
+                   TextAlignment="Center" FontFamily="Castellar" FontWeight="DemiBold" 
+                   Padding="10" Foreground="DarkGreen">
+            Supertoller Personenmanager
+        </TextBlock>
+        <TextBlock DockPanel.Dock="Bottom" Background="CadetBlue" TextAlignment="Right">Lorem ipsum dolor sit amet. 1234567890</TextBlock>
+        <StackPanel Background="Green">
+            <Button Margin="10" HorizontalAlignment="Center" Content="   Button 1   "></Button>
+            <Button Margin="10,0,10,10" HorizontalAlignment="Center" Content="   Button 2   "></Button>
+            <Button Margin="10,0,10,10" HorizontalAlignment="Center" Content="   Button 3   "/>
+        </StackPanel>
+        <Grid Background="Red">
+            <!--Element-Properties = ausgelagerte Attribute-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--Ab hier Content Property Elemente (Children) vom Grid-->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" MinWidth="100"></ColumnDefinition>
+                    <ColumnDefinition Width="80*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!--Beginn der Children-->
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="15">Name:</TextBlock>
+                <TextBox Name="tbName" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"></TextBox>
+                <TextBlock Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="15">Geschlecht:</TextBlock>
+                <ComboBox Name="cbGeschlecht" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"></ComboBox>
+                <TextBlock Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="15">Geburtsdatum:</TextBlock>
+                <DatePicker Name="dpGeburtsdatum" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="150" HorizontalAlignment="Left"></DatePicker>
+                <TextBlock Grid.Row="3" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="15">Haarfarbe:</TextBlock>
+                <WrapPanel RadioButton.Checked="RadioButton_Checked" Name="rbHaarfarbe" Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <RadioButton Margin="0 0 10 0">Rot</RadioButton>
+                    <RadioButton Margin="0 0 10 0">Blond</RadioButton>
+                    <RadioButton Margin="0 0 10 0">Braun</RadioButton>
+                    <RadioButton Margin="0 0 10 0">Rot</RadioButton>
+                </WrapPanel>
+            </Grid>
+            <Canvas Grid.Row="1" Background="Yellow">
+                <Button Canvas.Top="20" Canvas.Left="20" Content="     Person hinzufügen     " FontSize="15" Click="AddPerson_Click"></Button>
+                <Button Canvas.Bottom="20" Canvas.Right="20" Content="     Abbrechen     " FontSize="15"></Button>
+            </Canvas>
+        </Grid>
+    </DockPanel>
+</Window>
