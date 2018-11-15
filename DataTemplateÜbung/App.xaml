@@ -6,9 +6,17 @@
     <Application.Resources>
         <DataTemplate x:Key="serienTemplate" DataType="local:Serie">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Name}"/>
-                <TextBox Text="{Binding Rating}"/>
-                <TextBlock Text="{Binding SerienGenre}"/>
+                <TextBlock Text="{Binding Name,Mode=OneWay}"/>
+                <TextBox Text="{Binding Rating,Mode=TwoWay}"/>
+                <TextBlock Text="{Binding SerienGenre,Mode=OneWay}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="presenterTemplate" DataType="local:Serie">
+            <StackPanel>
+                <TextBlock FontSize="20">Folgende Serie ist ausgewählt:</TextBlock>
+                <TextBlock FontSize="20" Text="{Binding Name,Mode=OneWay}"/>
+                <TextBlock FontSize="20" Text="{Binding Rating,Mode=OneWay}"/>
+                <TextBlock FontSize="20" Text="{Binding SerienGenre,Mode=OneWay}"/>
             </StackPanel>
             
         </DataTemplate>

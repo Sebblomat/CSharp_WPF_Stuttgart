@@ -16,5 +16,9 @@
         <ComboBox Name="newgenre"></ComboBox>
         <Button Click="Button_Click" >Add</Button>
         <Button Click="Button_Click_1">Remove</Button>
+            
+        <ContentPresenter Content="{Binding ElementName=lbSerie, Path=SelectedItem}" ContentTemplate="{StaticResource presenterTemplate}">
+            
+        </ContentPresenter>
     </StackPanel>
 </Window>
