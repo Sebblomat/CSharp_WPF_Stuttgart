@@ -1,0 +1,20 @@
+﻿<Window x:Class="DataTemplateÜbung.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataTemplateÜbung"
+        mc:Ignorable="d"
+        Title="Übung Data Templates" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock>Anzahl: <Run Text="{Binding ElementName=lbSerie,Path=Items.Count, Mode=OneWay}"></Run></TextBlock>
+        <ListBox Name="lbSerie" ItemTemplate="{StaticResource serienTemplate}" ItemsSource="{Binding}">
+        </ListBox>
+        <TextBlock>Name:</TextBlock><TextBox Name="newname"></TextBox>
+        <TextBlock>Rating:</TextBlock><TextBox Name="newrating"></TextBox>
+        <TextBlock>Genre:</TextBlock>
+        <ComboBox Name="newgenre"></ComboBox>
+        <Button Click="Button_Click" >Add</Button>
+        <Button Click="Button_Click_1">Remove</Button>
+    </StackPanel>
+</Window>

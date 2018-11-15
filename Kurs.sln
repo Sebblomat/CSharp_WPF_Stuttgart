@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloBindings", "HelloBindi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaedteVerwaltung", "StaedteVerwaltung\StaedteVerwaltung.csproj", "{B5C873EF-6695-48DC-8406-B14B6504BECC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTemplateÜbung", "DataTemplateÜbung\DataTemplateÜbung.csproj", "{E375F0D7-33E7-48FA-B880-636C2927D641}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B5C873EF-6695-48DC-8406-B14B6504BECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5C873EF-6695-48DC-8406-B14B6504BECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5C873EF-6695-48DC-8406-B14B6504BECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E375F0D7-33E7-48FA-B880-636C2927D641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E375F0D7-33E7-48FA-B880-636C2927D641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E375F0D7-33E7-48FA-B880-636C2927D641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E375F0D7-33E7-48FA-B880-636C2927D641}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

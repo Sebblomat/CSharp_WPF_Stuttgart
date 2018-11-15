@@ -1,0 +1,16 @@
+﻿<Application x:Class="DataTemplateÜbung.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DataTemplateÜbung"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate x:Key="serienTemplate" DataType="local:Serie">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}"/>
+                <TextBox Text="{Binding Rating}"/>
+                <TextBlock Text="{Binding SerienGenre}"/>
+            </StackPanel>
+            
+        </DataTemplate>
+    </Application.Resources>
+</Application>
