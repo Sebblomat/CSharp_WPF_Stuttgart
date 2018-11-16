@@ -5,12 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SexyBooks.Views"
         xmlns:viewmodels="clr-namespace:SexyBooks.ViewModels"
+        xmlns:models="clr-namespace:SexyBooks.Models"
         mc:Ignorable="d"
         Title="ErgebnisView" Height="450" Width="800">
-    <Window.DataContext>
+    <d:Window.DataContext>
         <viewmodels:ErgebnisViewModel/>
-    </Window.DataContext>
-    <Grid>
+    </d:Window.DataContext>
+    <ScrollViewer>
         
-    </Grid>
+    <StackPanel>
+        <TextBlock>Treffer für <Run Text="{Binding Path=Suchbegriff, Mode=OneTime}" /></TextBlock>
+        <DataGrid ItemsSource="{Binding Buecher, Mode=OneWay}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Name">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type models:Buch}">
+                        <TextBlock Text="{Binding Path=volumeInfo.title}" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Header="Autor">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type models:Buch}">
+                        <TextBlock Text="{Binding Path=volumeInfo.authors[0]}" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Header="Cover">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type models:Buch}">
+                        <Image Source="{Binding Path=volumeInfo.imageLinks.smallThumbnail}" Height="50"></Image>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Header="Vorschau">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="{x:Type models:Buch}">
+                        <TextBlock>
+                            <Hyperlink Click="Hyperlink_Click" NavigateUri="{Binding Path=volumeInfo.previewLink}">Mehr Infos</Hyperlink>
+                        </TextBlock>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+    </ScrollViewer>
 </Window>

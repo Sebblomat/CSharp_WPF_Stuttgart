@@ -30,10 +30,11 @@ namespace SexyBooks.ViewModels
         }
         public DelegateCommand AddFavoriteCommand { get; set; }
         #endregion
-        public ErgebnisViewModel(ObservableCollection<Buch> buecher)
+        public ErgebnisViewModel(ObservableCollection<Buch> buecher, string suchbegriff)
         {
             AddFavoriteCommand = new DelegateCommand(AddFavorite);
             Buecher = buecher;
+            Suchbegriff = suchbegriff;
         }
 
         public ErgebnisViewModel()

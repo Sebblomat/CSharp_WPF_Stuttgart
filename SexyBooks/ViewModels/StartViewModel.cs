@@ -1,5 +1,6 @@
 ﻿using SexyBooks.Helpers;
 using SexyBooks.Models;
+using SexyBooks.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,12 @@ namespace SexyBooks.ViewModels
 
         public void SucheBuch(object p)
         {
-            BuchSucher.SucheBuecher(Suchbegriff);
+            var buecher = BuchSucher.SucheBuecher(Suchbegriff);
+
+            ErgebnisView view = new ErgebnisView();
+            view.DataContext = new ErgebnisViewModel(buecher,Suchbegriff);
+            view.Show();
+
         }
 
         public void ZeigeFavoriten(object p)
